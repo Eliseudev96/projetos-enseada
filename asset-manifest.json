@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/projetos-enseada/static/css/main.7ddcd7b9.css",
+    "main.js": "/projetos-enseada/static/js/main.4ff2ea98.js",
+    "static/js/453.b7ab53db.chunk.js": "/projetos-enseada/static/js/453.b7ab53db.chunk.js",
+    "static/media/fundo da home 2 (1).mp4": "/projetos-enseada/static/media/fundo da home 2 (1).bc740f17ba08fe7d7cde.mp4",
+    "static/media/LogoEnseada.png": "/projetos-enseada/static/media/LogoEnseada.1ee53cba6107508315b5.png",
+    "index.html": "/projetos-enseada/index.html",
+    "main.7ddcd7b9.css.map": "/projetos-enseada/static/css/main.7ddcd7b9.css.map",
+    "main.4ff2ea98.js.map": "/projetos-enseada/static/js/main.4ff2ea98.js.map",
+    "453.b7ab53db.chunk.js.map": "/projetos-enseada/static/js/453.b7ab53db.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ddcd7b9.css",
+    "static/js/main.4ff2ea98.js"
+  ]
+}
