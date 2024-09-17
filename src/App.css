@@ -1,38 +1,174 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Remove margem e padding do body e da página inteira */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  /* Certifique-se de que a página e o contêiner ocupam 100% da altura e largura */
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Remove barra de rolagem */
   }
-  to {
-    transform: rotate(360deg);
+  
+  /* Estilo do contêiner do vídeo */
+  .video-container {
+    position: relative;
+    height: 100vh; /* Ocupa toda a altura da janela */
+    width: 100vw;  /* Ocupa toda a largura da janela */
+    overflow: hidden;
   }
-}
+  
+  /* Estilo do vídeo */
+  .background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;  /* Garante que o vídeo preencha a largura */
+    min-height: 100%; /* Garante que o vídeo preencha a altura */
+    object-fit: cover; /* Corta o vídeo para cobrir a tela inteira */
+    z-index: -1; /* Mantém o vídeo atrás de qualquer outro conteúdo */
+  }
+  
+  /* Estilo para o logo no centro da tela */
+  .center-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza o logo horizontal e verticalmente */
+    z-index: 1; /* Garante que o logo fique sobre o vídeo */
+    width: 420px; /* Ajuste o tamanho do logo conforme necessário */
+    height: auto;
+  }
+  
+  /* Estilo para o texto abaixo do logo central */
+  .center-text {
+    position: absolute;
+    top: calc(70% + 100px); /* Ajusta a posição vertical mais abaixo do meio da tela */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza o texto horizontalmente */
+    color: white; /* Ajuste a cor do texto conforme necessário */
+    text-align: center;
+    max-width: 80%; /* Garante que o texto não ocupe toda a largura da tela */
+    font-size: 1.2rem; /* Ajuste o tamanho da fonte conforme necessário */
+    padding: 0 10px; /* Adiciona um pouco de padding para não ficar colado nas bordas */
+  }
+  
+  /* Estilo para o logo no canto superior esquerdo */
+  .corner-logo {
+    position: absolute;
+    top: 20px;    /* Ajuste a distância do topo */
+    left: 20px;   /* Ajuste a distância da esquerda */
+    z-index: 1;   /* Garante que o logo fique sobre o vídeo */
+    width: 65px; /* Tamanho pequeno para o logo */
+    height: auto;
+  }
+
+  /* Estilo para o botão de abrir a sidebar */
+.sidebar-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  /* Estilo da sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Inicia fora da tela */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    transition: right 0.3s ease;
+    z-index: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Estilo para abrir a sidebar */
+  .sidebar.open {
+    right: 0;
+  }
+  
+  /* Estilo para o botão de fechar a sidebar */
+  .sidebar-close {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Estilo do conteúdo da sidebar */
+  .sidebar-content {
+    text-align: center;
+  }
+  
+  /* Estilo do menu da sidebar */
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-menu li {
+    margin: 20px 0;
+  }
+  
+  .sidebar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  /* Estilo para o rodapé da sidebar */
+.sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto; /* Alinha o rodapé ao final da sidebar */
+  }
+  
+  /* Estilo para os ícones sociais no rodapé */
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-icon {
+    font-size: 24px;
+    color: white;
+    margin: 10px;
+  }
+  
+  /* Estilo para os nomes de perfil */
+  .profile-names {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-names span {
+    margin: 5px 0;
+  }
+  
+  /* Estilo para os ícones sociais à direita */
+  .sidebar-social-icons {
+    display: flex;
+    justify-content: center;
+  }
